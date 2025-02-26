@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_components/common/widgets/default_button.dart';
 import 'package:flutter_custom_components/screens/display_comp.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../common/widgets/alert_dialog.dart';
+import '../common/widgets/alert_snackbar.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -40,12 +42,12 @@ class Home extends StatelessWidget {
               outerPadding: EdgeInsets.only(top: 4.0.h, bottom: 4.0.h),
             ),
             DefaultButton(
-              label: "Image & Crop",
+              label: "Camera & Crop",
               onPressed: (){
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const DisplayComp(compName: "ImageCrop")
+                      builder: (context) => const DisplayComp(compName: "Camera & Crop")
                   ),
                 );
               },
@@ -57,7 +59,7 @@ class Home extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const DisplayComp(compName: "PdfViewer")
+                      builder: (context) => const DisplayComp(compName: "PDF Viewer")
                   ),
                 );
               },
@@ -65,12 +67,51 @@ class Home extends StatelessWidget {
             ),
             DefaultButton(
               label: "Alert Dialog",
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const DisplayComp(compName: "AlertDialog")
-                  ),
+              onPressed: () async {
+                await showAlertDialog(
+                  context: context,
+                  message: "Data is fetched from master record !",
+                  status: StatusTypes.info,
+                  isAction: false,
+                  onConfirm: () {},
+                );
+                await Future.delayed(Duration(seconds: 1));
+                await showAlertDialog(
+                  context: context,
+                  message: "Data added successfully !",
+                  status: StatusTypes.success,
+                  isAction: false,
+                  onConfirm: () {},
+                );
+                await Future.delayed(const Duration(seconds: 1));
+                await showAlertDialog(
+                  context: context,
+                  message: "Are you sure to add this data ?",
+                  status: StatusTypes.warning,
+                  isAction: false,
+                  onConfirm: () {},
+                );
+                await Future.delayed(const Duration(seconds: 1));
+                await showAlertDialog(
+                  context: context,
+                  message: "Failed to add data !",
+                  status: StatusTypes.error,
+                  isAction: false,
+                  onConfirm: () {},
+                );
+                await Future.delayed(const Duration(seconds: 1));
+                await showAlertDialog(
+                  context: context,
+                  message: "Are you sure you want to delete this data?",
+                  status: StatusTypes.warning,
+                  isAction: true,
+                  onConfirm: () {
+                    showAlertSnackBar(
+                      context: context,
+                      message: 'Data added successfully !',
+                      status: Status.success,
+                    );
+                  },
                 );
               },
               outerPadding: EdgeInsets.only(top: 5.0.h, bottom: 5.0.h),
@@ -78,11 +119,25 @@ class Home extends StatelessWidget {
             DefaultButton(
               label: "Alert Snackbar",
               onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const DisplayComp(compName: "AlertSnackbar")
-                  ),
+                showAlertSnackBar(
+                  context: context,
+                  message: 'Data is fetched from master record !',
+                  status: Status.info,
+                );
+                showAlertSnackBar(
+                  context: context,
+                  message: 'Data added successfully !',
+                  status: Status.success,
+                );
+                showAlertSnackBar(
+                  context: context,
+                  message: 'Are you sure to add this data ?',
+                  status: Status.warning,
+                );
+                showAlertSnackBar(
+                  context: context,
+                  message: 'Failed to add data !',
+                  status: Status.error,
                 );
               },
               outerPadding: EdgeInsets.only(top: 5.0.h, bottom: 5.0.h),
@@ -93,14 +148,14 @@ class Home extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const DisplayComp(compName: "MultiInput")
+                      builder: (context) => const DisplayComp(compName: "Multi Input")
                   ),
                 );
               },
               outerPadding: EdgeInsets.only(top: 5.0.h, bottom: 5.0.h),
             ),
             DefaultButton(
-              label: "Custom Dropdown",
+              label: "Dropdown",
               onPressed: (){
                 Navigator.push(
                   context,

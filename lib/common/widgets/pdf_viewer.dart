@@ -10,8 +10,6 @@ import '../../services/directory_service.dart';
 import '../styles/colors.dart';
 import 'alert_snackbar.dart';
 import 'default_button.dart';
-import 'footer.dart';
-import 'header.dart';
 import 'loader.dart';
 
 class PdfViewer extends StatefulWidget {

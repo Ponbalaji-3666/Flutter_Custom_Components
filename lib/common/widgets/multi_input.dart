@@ -62,7 +62,7 @@ class _MultiInputState extends State<MultiInput> {
           keyboardType: TextInputType.text,
           isSuffixIcon: true,
           suffixIcon: Icons.add,
-          suffixIconSize: 16.sp,
+          suffixIconSize: 15.sp,
           onPressSuffixIcon: _addItem,
         ),
         Expanded(
@@ -95,6 +95,8 @@ class _MultiInputState extends State<MultiInput> {
         DefaultButton(
           label: "Add Locations",
           onPressed: (){
+            ScaffoldMessenger.of(context)
+                .showSnackBar(SnackBar(content: Text(_items.toString())));
           },
           outerPadding: EdgeInsets.only(top: 0.0.h, bottom: 0.0.h),
         ),

@@ -51,6 +51,13 @@ dev_dependencies:
   permission_handler: ^11.3.1
   file_picker: ^8.1.7
   flutter_secure_storage: ^9.2.2
+  drop_down_list: ^1.0.0
+  flutter_map: ^7.0.2
+  url_launcher: ^6.3.1
+  camera: ^0.10.6
+  image_cropper: ^9.0.0
+  google_mlkit_text_recognition: ^0.14.0
+  http: ^1.2.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

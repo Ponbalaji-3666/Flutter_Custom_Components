@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
 import '../styles/colors.dart';
 
 class Header extends StatefulWidget {
@@ -43,21 +42,12 @@ class _HeaderState extends State<Header> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              if(widget.title == null)
-                ...[
-                  Image.asset(
-                    'assets/images/mersad_logo.png', // Use PNG file path
-                    width: 29.5.w,
-                    height: 29.5.h,
-                  ),
-                  SizedBox(width: 2.w),
-                ],
               Text(
-                "Header Title",
+                '${widget.title}',
                 style: TextStyle(
                   color: darkBlue,
                   fontWeight: FontWeight.bold,
-                  fontSize: 16.8.sp,
+                  fontSize: 16.5.sp,
                 ),
               ),
             ],
@@ -65,7 +55,7 @@ class _HeaderState extends State<Header> {
           IconButton(
             onPressed: () {
             },
-            icon: const Icon(Icons.person)
+            icon: const Icon(Icons.menu_outlined)
           )
         ],
       ),

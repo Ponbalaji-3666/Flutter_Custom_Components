@@ -54,23 +54,24 @@ class DefaultButton extends StatelessWidget {
               children: [
                 Text(
                   label,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     color: labelColor,
                     fontWeight: FontWeight.w400,
                     fontSize: 14.sp,
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left:8.0.w),
-                  child: isIcon ? Opacity(
-                    opacity: 0.9,
-                    child: Icon(
-                      icon,
-                      color: labelColor,
-                      size: 18.sp,
-                    ),
-                  ) : null,
-                ),
+                // Padding(
+                //   padding: EdgeInsets.only(left:8.0.w),
+                //   child: isIcon ? Opacity(
+                //     opacity: 0.9,
+                //     child: Icon(
+                //       icon,
+                //       color: labelColor,
+                //       size: 18.sp,
+                //     ),
+                //   ) : null,
+                // ),
               ],
             ),
           ),
