@@ -121,6 +121,7 @@ class _CustomCamState extends State<CustomCam> {
             toolbarWidgetColor: white,
             backgroundColor: white,
             activeControlsWidgetColor: oliveGreen,
+            lockAspectRatio: false,
             aspectRatioPresets: [
               CropAspectRatioPreset.original,
               CropAspectRatioPreset.square,

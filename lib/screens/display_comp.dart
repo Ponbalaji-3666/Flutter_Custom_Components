@@ -236,26 +236,32 @@ class _DisplayCompState extends State<DisplayComp> {
                   SelectedListItem(
                       name: "Chennai",
                       value: "1001",
+                      isSelected: selectedLocations.any((item) => item.value == "1001"),
                   ),
                   SelectedListItem(
                       name: "Mumbai",
                       value: "1002",
+                      isSelected: selectedLocations.any((item) => item.value == "1002"),
                   ),
                   SelectedListItem(
                     name: "Delhi",
                     value: "1003",
+                    isSelected: selectedLocations.any((item) => item.value == "1003"),
                   ),
                   SelectedListItem(
                     name: "Bangalore",
                     value: "1004",
+                    isSelected: selectedLocations.any((item) => item.value == "1004"),
                   ),
                   SelectedListItem(
                     name: "Kolkata",
                     value: "1005",
+                    isSelected: selectedLocations.any((item) => item.value == "1005"),
                   ),
                   SelectedListItem(
                     name: "Pune",
                     value: "1006",
+                    isSelected: selectedLocations.any((item) => item.value == "1006"),
                   ),
                 ],
             ),

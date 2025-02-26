@@ -48,7 +48,7 @@ class _PdfViewerState extends State<PdfViewer> {
         if (selectedDirectory != null) {
           try{
             final timestamp = DateTime.now().millisecondsSinceEpoch;
-            final file = File('$selectedDirectory/delivery_note_$timestamp.pdf');
+            final file = File('$selectedDirectory/pdf_file_$timestamp.pdf');
             await file.writeAsBytes(bytes.buffer.asUint8List());
             CustomLoader().hide();
 
